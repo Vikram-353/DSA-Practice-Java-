@@ -14,6 +14,7 @@ public class ReverseArray {
         }
         System.out.println("Reversed array: ");
         revArr(0, arr);
+        sc.close();
     }
 
     static void revArr(int i, int[] arr) {
