@@ -13,6 +13,7 @@ public class PrintNNumbers {
             reverse = reverse * 10 + digit;
         }
         System.out.println(reverse);
+        System.out.println((int) Math.log10(2654665) + 1);
 
     }
 }

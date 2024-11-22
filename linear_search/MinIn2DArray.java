@@ -31,15 +31,26 @@ public class MinIn2DArray {
             }
             System.out.println();
         }
-        int min = arr[0][0];
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length; j++) {
+            for (int j = 0; j < arr[i].length; j++) {
                 if (min > arr[i][j]) {
                     min = arr[i][j];
                 }
             }
         }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                if (max < arr[i][j]) {
+                    max = arr[i][j];
+                }
+            }
+        }
         System.out.println("Minimum value is : " + min);
+        System.out.println("Maximum value is : " + max);
+        System.out.println(11 % 10);
+        System.out.println(111 / 10);
         sc.close();
     }
 }
