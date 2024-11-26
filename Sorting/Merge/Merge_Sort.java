@@ -1,6 +1,6 @@
 package Sorting.Merge;
 
-//Time Complexity is O(nlogn)
+//Time Complexity is O(nlogn) b/c dividing array n times from mid which take logn time
 //Space Complexity is O(n) b/c we using extra temp array space to stor array temprorarly
 public class Merge_Sort {
 
