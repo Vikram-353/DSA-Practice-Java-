@@ -6,6 +6,7 @@ import java.util.Deque;
 public class DQue {
     public static void main(String[] args) {
         Deque<Integer> dq = new ArrayDeque<>();// faster iteration, Low memory,no null value allowed unlike linked list
+        // circular array is used , just shift head and tail
         dq.addFirst(3);
         dq.addLast(4);
         dq.offerFirst(5);
