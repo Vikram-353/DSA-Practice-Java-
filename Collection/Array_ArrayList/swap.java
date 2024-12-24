@@ -1,6 +1,6 @@
 package Array_ArrayList;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class swap {
     public static void main(String[] args) {

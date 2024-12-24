@@ -1,4 +1,4 @@
-package Map;
+package Map.CandSMap;
 
 import java.util.*;
 

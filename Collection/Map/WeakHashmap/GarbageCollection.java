@@ -1,6 +1,5 @@
 package Map.WeakHashmap;
 
-import java.beans.AppletInitializer;
 import java.lang.ref.WeakReference;
 
 public class GarbageCollection {
