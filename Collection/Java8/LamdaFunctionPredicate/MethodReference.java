@@ -1,4 +1,4 @@
-package Java8;
+package Java8.LamdaFunctionPredicate;
 
 import java.util.*;
 import java.util.stream.Collectors;
