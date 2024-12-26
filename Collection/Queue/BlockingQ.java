@@ -68,6 +68,7 @@ public class BlockingQ {
         consumer.start();
 
         BlockingQueue<Integer> list1 = new LinkedBlockingQueue<>();
+        System.out.println(list1);
         // Optionally bounded backed by linked list
         // Uses two seperatr locks for enqueue and dequeue operations
         // Higher concurrency between producers and consumers
@@ -84,6 +85,7 @@ public class BlockingQ {
         System.out.println(list2);
 
         BlockingQueue<Integer> list3 = new SynchronousQueue<>();
+        System.out.println(list3);
         // each insert operation must wait for a corresponding remove opertion by
         // another thread and vice versa
         // It cannot store element , capacity of at most ane element.

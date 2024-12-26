@@ -9,6 +9,7 @@ public class ParallelStreamDemo {
         long startTime = System.currentTimeMillis();
         List<Integer> li = Stream.iterate(0, x -> x + 1).limit(20000).toList();
         List<Long> factorialN = li.stream().map(ParallelStreamDemo::factorial).toList();
+        System.out.println(factorialN);
         long endTime = System.currentTimeMillis();
         long totalTime = endTime - startTime;
         System.out.println(totalTime);
