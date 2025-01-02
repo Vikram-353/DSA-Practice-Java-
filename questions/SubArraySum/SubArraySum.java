@@ -1,7 +1,7 @@
 package questions.SubArraySum;
 
-import java.util.HashMap;
-import java.util.Map;
+// import java.util.HashMap;
+// import java.util.Map;
 
 public class SubArraySum {
     public static void main(String[] args) {
