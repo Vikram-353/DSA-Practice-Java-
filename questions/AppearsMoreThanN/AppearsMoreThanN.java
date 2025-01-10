@@ -1,7 +1,7 @@
 package questions.AppearsMoreThanN;
 
-import java.util.HashMap;
-import java.util.Map;
+// import java.util.HashMap;
+// import java.util.Map;
 
 public class AppearsMoreThanN {
     public static void main(String[] args) {
