@@ -15,13 +15,15 @@ public class lowerBound {
     public static int Bsearch(int[] a, int low, int high, int k) {
         int ans = a.length;
         while (low <= high) {
-            int mid = (low + high) / 2;
+            int mid = low + (high - low) / 2;
             // maybe an answer
             if (a[mid] >= k) {
                 ans = mid;
                 high = mid - 1;
+
             } else {
                 low = mid + 1;
+
             }
         }
         return ans;
