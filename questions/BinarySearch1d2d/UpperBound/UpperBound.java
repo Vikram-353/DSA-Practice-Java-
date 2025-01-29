@@ -1,32 +1,28 @@
-package questions.BinarySearch1d2d.BS.UpperBound;
+package questions.BinarySearch1d2d.UpperBound;
 
 public class UpperBound {
     public static void main(String[] args) {
 
-        int[] a = { 3, 5, 8, 9, 15, 19 };
-        int k = 9;
+        int[] a = { 3, 4, 4, 7, 8, 10 };
+        int k = 5;
         int low = 0;
         int high = a.length - 1;
-        int result = Bsearch(a, low, high, k);
-        System.out.println(result);
-
-    }
-
-    public static int Bsearch(int[] a, int low, int high, int k) {
-        int ans = a.length;
+        int[] ans = new int[2];
         while (low <= high) {
             int mid = (low + high) / 2;
             // maybe an answer
-            if (a[mid] > k) {
-                ans = mid;
-
+            if (a[mid] >= k) {
+                ans[0] = mid + 1;
                 high = mid - 1;
             } else {
+                ans[1] = mid + 1;
                 low = mid + 1;
 
             }
         }
-        return ans;
+        for (int i : ans) {
+            System.out.println(i);
+        }
 
     }
 
