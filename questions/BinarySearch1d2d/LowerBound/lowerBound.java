@@ -4,7 +4,7 @@ public class lowerBound {
     public static void main(String[] args) {
 
         int[] a = { 3, 5, 8, 15, 19, 20 };
-        int k = 0;
+        int k = 1;
         int low = 0;
         int high = a.length - 1;
         int result = Bsearch(a, low, high, k);
@@ -16,17 +16,22 @@ public class lowerBound {
         int ans = a.length;
         while (low <= high) {
             int mid = low + (high - low) / 2;
+            if (k < a[0]) {
+                return -1;
+            }
             // maybe an answer
-            if (a[mid] >= k) {
-                ans = mid;
+            if (a[mid] > k) {
+
                 high = mid - 1;
 
-            } else {
+            } else if (k > a[mid]) {
                 low = mid + 1;
-
+            } else {
+                return mid;
             }
+
         }
-        return ans;
+        return a[high];
 
     }
 }
