@@ -3,8 +3,8 @@ package questions.BinarySearch1d2d.LowerBound;
 public class lowerBound {
     public static void main(String[] args) {
 
-        int[] a = { 3, 5, 8, 15, 19, 20 };
-        int k = 1;
+        int[] a = { 3, 5, 8, 8, 8, 8, 15, 19, 20 };
+        int k = 8;
         int low = 0;
         int high = a.length - 1;
         int result = Bsearch(a, low, high, k);
@@ -13,7 +13,7 @@ public class lowerBound {
     }
 
     public static int Bsearch(int[] a, int low, int high, int k) {
-        int ans = a.length;
+        // int ans = a.length;
         while (low <= high) {
             int mid = low + (high - low) / 2;
             if (k < a[0]) {
@@ -24,14 +24,14 @@ public class lowerBound {
 
                 high = mid - 1;
 
-            } else if (k > a[mid]) {
+            } else if (k >= a[mid]) {
                 low = mid + 1;
             } else {
                 return mid;
             }
 
         }
-        return a[high];
+        return high;
 
     }
 }
