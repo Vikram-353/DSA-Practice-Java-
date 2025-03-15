@@ -17,6 +17,7 @@ public class BinarySearch {
             return -1;
         }
         int mid = low + (high - low) / 2;
+
         if (a[mid] == k) {
             return mid;
         } else if (k > a[mid]) {
