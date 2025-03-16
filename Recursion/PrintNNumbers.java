@@ -1,4 +1,4 @@
-package Recirsion;
+package Recursion;
 
 public class PrintNNumbers {
     public static void main(String[] args) {

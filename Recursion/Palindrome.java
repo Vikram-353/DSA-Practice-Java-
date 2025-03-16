@@ -1,4 +1,4 @@
-package Recirsion;
+package Recursion;
 
 public class Palindrome {
     // Non recursive method

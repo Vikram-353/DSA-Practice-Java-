@@ -1,13 +1,20 @@
-package Sorting.CyclicSorting;
+package Sorting.FirstPositiveMissing;
 
 import java.util.Arrays;
 
-public class CyclicSort {
+public class FirstPositiveMissing {
     public static void main(String[] args) {
 
-        int[] a = { 3, 5, 2, 1, 4, 2, 3 };
+        int[] a = { 7, 8, 9, 11, 12 };
         cyclicSort(a);
         System.out.println(Arrays.toString(a));
+
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] != i + 1) {
+                System.out.println(i + 1);
+                break;
+            }
+        }
 
     }
 
@@ -21,7 +28,7 @@ public class CyclicSort {
         int i = 0;
         while (i < a.length) {
             int correct = a[i] - 1;
-            if (a[i] != a[correct]) {
+            if ((a[i] > 0) && (a[i] <= a.length) && (a[i] != a[correct])) {
                 Swap(a, i, correct);
             } else {
                 i++;
