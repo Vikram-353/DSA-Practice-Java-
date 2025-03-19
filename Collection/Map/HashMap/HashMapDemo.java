@@ -18,7 +18,7 @@ public class HashMapDemo {
 
         }
 
-        System.out.println(maps);
+        // System.out.println(maps);
 
         Set<Map.Entry<Integer, String>> keys = maps.entrySet();
         for (Map.Entry<Integer, String> entry : keys) {
