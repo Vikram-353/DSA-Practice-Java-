@@ -1,7 +1,5 @@
 package Recursion;
 
-import java.util.Arrays;
-
 public class ReverseString {
     public static void main(String[] args) {
         char[] s = { 'a', 'b', 'c' };

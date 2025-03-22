@@ -23,7 +23,13 @@ public class PascalTriangle {
         for (int i = 1; i <= col; i++) {
             list.add(answer(i));
         }
+
         System.out.println(list);
+
+        // sum of nth row
+
+        System.out.printf("Sum of %dth row : %d ", row, 1 << row - 1);
+        // System.out.println(row & ());
 
     }
 
