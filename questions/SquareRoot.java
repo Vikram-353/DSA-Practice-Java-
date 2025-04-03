@@ -3,9 +3,9 @@ package questions;
 public class SquareRoot {
     public static void main(String[] args) {
 
-        int n = 40;
+        int n = 100;
         int d = 3;
-        double result = Search(n, d);
+        double result = (int) Search(n, d);
         System.out.printf("%.3f", result);
     }
 
@@ -36,4 +36,18 @@ public class SquareRoot {
         }
         return root;
     }
+
+    // static double Search(double n, int d) {
+    // double x = n;
+    // double root;
+    // while (true) {
+    // root = 0.5 * (x + (n / x));
+    // if (Math.abs(root - x) < 1) {
+    // break;
+
+    // }
+    // x = root;
+    // }
+    // return root;
+    // }
 }
