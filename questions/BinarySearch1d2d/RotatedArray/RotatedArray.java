@@ -1,3 +1,5 @@
+package questions.BinarySearch1d2d.RotatedArray;
+
 public class RotatedArray {
     public static void main(String[] args) {
         int[] a = { 4, 4, 4, 4, 5, 6, 7, 0, 1, 2, 2, 2, 2 };
@@ -22,7 +24,6 @@ public class RotatedArray {
             high = pivot - 1;
 
             return Bsearch(a, low, high, k);
-
         } else {
             low = pivot + 1;
             return Bsearch(a, low, high, k);

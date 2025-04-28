@@ -8,7 +8,7 @@ public class LR_Recursion {
         int target = 2;
         ArrayList<Integer> list = new ArrayList<>();
 
-        System.out.println(LinearSearch(a, target, 0, list));
+        System.out.println(LinearSearch(a, target, 0));
     }
 
     // static ArrayList<Integer> list = new ArrayList<>();
@@ -25,7 +25,20 @@ public class LR_Recursion {
     // // return -1;
     // }
 
-    static ArrayList<Integer> LinearSearch(int[] a, int target, int n, ArrayList<Integer> list) {
+    // static ArrayList<Integer> LinearSearch(int[] a, int target, int n,
+    // ArrayList<Integer> list) {
+    // if (n == a.length) {
+    // return list;
+    // }
+
+    // if (a[n] == target) {
+    // list.add(n);
+    // }
+    // return LinearSearch(a, target, n + 1, list);
+    // // return -1;
+    // }
+    static ArrayList<Integer> LinearSearch(int[] a, int target, int n) {
+        ArrayList<Integer> list = new ArrayList<>();
         if (n == a.length) {
             return list;
         }
@@ -33,7 +46,10 @@ public class LR_Recursion {
         if (a[n] == target) {
             list.add(n);
         }
-        return LinearSearch(a, target, n + 1, list);
+
         // return -1;
+        ArrayList<Integer> list2 = LinearSearch(a, target, n + 1);
+        list.addAll(list2);
+        return list;
     }
 }
