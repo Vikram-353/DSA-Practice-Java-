@@ -1,7 +1,6 @@
 package questions.phonePad;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class phonePad {
     public static void main(String[] args) {
