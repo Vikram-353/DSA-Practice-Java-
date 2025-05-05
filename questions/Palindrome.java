@@ -2,7 +2,7 @@ package questions;
 
 public class Palindrome {
     public static void main(String[] args) {
-        int n = 121;
+        int n = -121;
         int num = n;
         int reverse = 0;
         int digit = 0;

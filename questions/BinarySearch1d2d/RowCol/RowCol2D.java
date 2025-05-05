@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class RowCol2D {
     public static void main(String[] args) {
-        int[][] matrix = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+        int[][] matrix = { { 1, 3 } };
         int target = 0;
         // int[] result = search(matrix, target);
         // for (int i : result) {
@@ -15,21 +15,25 @@ public class RowCol2D {
     }
 
     static int[] search(int[][] matrix, int target) {
-        int r = 0;
-        int c = matrix.length - 1;
-        while (r < matrix.length && c >= 0) {
-            if (target == matrix[r][c]) {
-                return new int[] { r, c };
-            }
-            if (target < matrix[r][c]) {
-                c--;
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return new int[] { -1, -1 };
+        }
 
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        int r = 0, c = cols - 1;
+
+        while (r < rows && c >= 0) {
+            int value = matrix[r][c];
+            if (target == value) {
+                return new int[] { r, c };
+            } else if (target < value) {
+                c--;
             } else {
                 r++;
             }
-
         }
-        return new int[] { -1, -1 };
 
+        return new int[] { -1, -1 };
     }
 }
