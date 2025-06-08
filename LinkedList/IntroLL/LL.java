@@ -16,6 +16,21 @@ public class LL {
     // return;
     // }
 
+    private void reverse(Node node) {
+        if (node == tail) {
+            head = tail;
+            return;
+        }
+        reverse(node.next);
+        tail.next = node;
+        tail = node;
+        tail.next = null;
+    }
+
+    public void gerReverse() {
+        reverse(head);
+    }
+
     public void insertFirst(int val) {
         Node node = new Node(val);
         node.next = head;

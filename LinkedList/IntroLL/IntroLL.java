@@ -21,6 +21,7 @@ public class IntroLL {
         list.deleteFirst();
         list.display();
         list.deleteLast();
+
         list.display();
         list.deletePosition(3);
         list.display();
@@ -28,6 +29,9 @@ public class IntroLL {
         list.display();
 
         System.out.println(list.getSize());
+
+        list.gerReverse();
+        list.display();
 
     }
 
