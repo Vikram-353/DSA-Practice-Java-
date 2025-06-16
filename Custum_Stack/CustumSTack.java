@@ -35,6 +35,10 @@ public class CustumSTack {
         return digit;
     }
 
+    public int peak() {
+        return isEmpty() ? -1 : data[0];
+    }
+
     public boolean isEmpty() {
         return ptr == -1;
     }
