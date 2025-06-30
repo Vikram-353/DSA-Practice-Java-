@@ -10,7 +10,7 @@ public class BFS {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3,
                 new TreeNode(9),
-                new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+                new TreeNode(9, new TreeNode(7), new TreeNode(7)));
 
         BFS bfs = new BFS();
         List<List<Integer>> result = bfs.levelOrder(root);
@@ -20,7 +20,8 @@ public class BFS {
         System.out.println(findSuccessor(root, 9).val);
 
         List<List<Integer>> result2 = bfs.zigzagLevelOrder(root);
-        List<Integer> result3 = bfs.rightSideView(root);
+        // List<Integer> result3 = bfs.rightSideView(root);
+        boolean result3 = bfs.isSymmetric(root);
         System.out.println(result2);
         System.out.println(result3);
 
@@ -194,6 +195,41 @@ public class BFS {
         }
 
         return result;
+
+    }
+
+    public boolean isSymmetric(TreeNode root) {
+        // List<Integer> result = new ArrayList<>();
+
+        if (root == null) {
+            return true;
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root.left);
+        queue.add(root.right);
+
+        while (!queue.isEmpty()) {
+            TreeNode left = queue.poll();
+            TreeNode right = queue.poll();
+
+            if (left == null && right == null) {
+                continue;
+            }
+            if (left == null || right == null) {
+                return false;
+            }
+            if (left.val != right.val) {
+                return false;
+            }
+
+            queue.add(left.left);
+            queue.add(right.right);
+            queue.add(left.right);
+            queue.add(right.left);
+
+        }
+        return true;
 
     }
 
