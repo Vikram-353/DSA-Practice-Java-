@@ -1,6 +1,6 @@
 package BinaryTree.Questions.DFS;
 
-import java.util.*;
+import java.util.Arrays;
 
 public class DFS {
     public static void main(String[] args) {
@@ -12,6 +12,9 @@ public class DFS {
         int result = dfs.diameterOfBinaryTree(root);
 
         System.out.println(result);
+
+        System.out.println(dfs.isValidBST(root));
+        System.out.println(dfs.kthSmallest(root, 1));
 
     }
 
@@ -85,6 +88,111 @@ public class DFS {
             curr = curr.right;
 
         }
+    }
+
+    public boolean isValidBST(TreeNode root) {
+
+        return helper(root, null, null);
+    }
+
+    public boolean helper(TreeNode node, Integer low, Integer high) {
+        if (node == null) {
+            return true;
+        }
+
+        if (low != null && low >= node.val) {
+            return false;
+        }
+        if (high != null && high <= node.val) {
+            return false;
+
+        }
+
+        boolean left = helper(node, low, node.val);
+        boolean right = helper(node, node.val, high);
+
+        return left && right;
+    }
+
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) {
+            return null;
+        }
+
+        if (root == p || root == q) {
+            return root;
+        }
+
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+
+        if (left != null && right != null) {
+            return root;
+        }
+
+        if (left == null) {
+            return right;
+        } else {
+            return left;
+        }
+    }
+
+    public int kthSmallest(TreeNode root, int k) {
+        return helper(root, k).val;
+    }
+
+    int count = 0;
+
+    public TreeNode helper(TreeNode root, int k) {
+        if (root == null) {
+            return null;
+        }
+
+        TreeNode left = helper(root.left, k);
+
+        if (left != null) {
+            return left;
+        }
+        count++;
+        if (count == k) {
+            return root;
+        }
+
+        return helper(root.right, k);
+
+    }
+
+    // public TreeNode buildTree(int[] preorder, int[] inorder) {
+    // if (preorder.length == 0) {
+    // return null;
+    // }
+
+    // int r = preorder[0];
+    // int index = 0;
+
+    // for (int i = 0; i < inorder.length; i++) {
+    // if (inorder[i] == r) {
+    // TreeNode node = new TreeNode(r);
+    // }
+
+    // node.left = buildTree(Arrays.copyOfRange(preorder, 1, index + 1),
+    // Arrays.copyOfRange(inorder, 0, index));
+    // node.right = buildTree(Arrays.copyOfRange(preorder, index + 1,
+    // preorder.length),
+    // Arrays.copyOfRange(inorder, index + 1, inorder.length));
+    // }
+    // }
+
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+        if (root == null) {
+            return false;
+        }
+        if (root.val == targetSum && root.left == null && root.right == null) {
+            return true;
+        }
+
+        return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
+
     }
 
 }
