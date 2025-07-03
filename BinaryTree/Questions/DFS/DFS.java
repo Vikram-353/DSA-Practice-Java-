@@ -12,9 +12,12 @@ public class DFS {
         int result = dfs.diameterOfBinaryTree(root);
 
         System.out.println(result);
-
+        int[] arr = { 3, 9 };
         System.out.println(dfs.isValidBST(root));
         System.out.println(dfs.kthSmallest(root, 1));
+        System.out.println(dfs.sumNumbers(root));
+        System.out.println(dfs.maxPathSum(root));
+        System.out.println(dfs.validPath(root, arr));
 
     }
 
@@ -193,6 +196,66 @@ public class DFS {
 
         return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
 
+    }
+
+    public int sumNumbers(TreeNode root) {
+        return helperSum(root, 0);
+    }
+
+    private int helperSum(TreeNode node, int sum) {
+        if (node == null) {
+            return 0;
+        }
+        sum = sum * 10 + node.val;
+
+        if (node.left == null && node.right == null) {
+            return sum;
+        }
+
+        return helperSum(node.left, sum) + helperSum(node.right, sum);
+    }
+
+    int ans = Integer.MIN_VALUE;
+
+    public int maxPathSum(TreeNode root) {
+        helperPath(root);
+        return ans;
+    }
+
+    private int helperPath(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+
+        int left = helperPath(node.left);
+        int right = helperPath(node.right);
+
+        left = Math.max(0, left);
+        right = Math.max(0, right);
+
+        int pathSum = left + right + node.val;
+
+        ans = Math.max(ans, pathSum);
+        return Math.max(left, right) + node.val;
+
+    }
+
+    public boolean validPath(TreeNode node, int[] arr) {
+        return helperPathValid(node, arr, 0);
+    }
+
+    boolean helperPathValid(TreeNode node, int[] arr, int i) {
+        if (node == null) {
+            return false;
+        }
+
+        if (arr[i] == node.val) {
+            return true;
+        }
+
+        validPath(node.left, arr);
+        validPath(node.right, arr);
+        return false;
     }
 
 }
