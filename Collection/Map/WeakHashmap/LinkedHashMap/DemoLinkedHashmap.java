@@ -1,4 +1,4 @@
-package Map.LinkedHashMap;
+package Map.WeakHashmap.LinkedHashMap;
 
 import java.util.LinkedHashMap;
 import java.util.*;
