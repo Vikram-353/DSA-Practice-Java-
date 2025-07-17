@@ -8,6 +8,9 @@ public class prac {
 
         int[] b = PlusOne(a);
         int[] arr = { 3, 4, 5, 6, 8, 10, 90, 0 };
+
+        rotateByK(arr, 2);
+
         System.out.println(secondLargest(arr));
         System.out.println(isSorted(arr));
         System.out.println(Arrays.toString(b));
@@ -80,5 +83,26 @@ public class prac {
         }
 
         return true;
+    }
+
+    public static void rotateByK(int[] a, int k) {
+        int n = a.length;
+        k = k % n;
+
+        Reverse(a, n - k, n - 1);
+        Reverse(a, 0, n - k - 1);
+        Reverse(a, 0, n - 1);
+
+        System.out.println(Arrays.toString(a));
+    }
+
+    public static void Reverse(int[] a, int left, int right) {
+        while (left < right) {
+            int temp = a[left];
+            a[left] = a[right];
+            a[right] = temp;
+            left++;
+            right--;
+        }
     }
 }
