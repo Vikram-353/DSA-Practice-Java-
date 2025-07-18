@@ -6,8 +6,6 @@ public class LR_Recursion {
     public static void main(String[] args) {
         int[] a = { 1, 2, 2, 3, 4, 5, 6 };
         int target = 2;
-        ArrayList<Integer> list = new ArrayList<>();
-
         System.out.println(LinearSearch(a, target, 0));
     }
 
