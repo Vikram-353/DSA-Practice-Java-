@@ -2,6 +2,8 @@ package BinaryTree.Questions.BFS;
 
 import java.util.ArrayList;
 import java.util.Deque;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -24,6 +26,8 @@ public class BFS {
         boolean result3 = bfs.isSymmetric(root);
         System.out.println(result2);
         System.out.println(result3);
+        boolean result4 = findTarget(root, 100);
+        System.out.println(result4);
 
     }
 
@@ -232,5 +236,28 @@ public class BFS {
         return true;
 
     }
+
+    // Two Sum
+    // return true if there are two numbers which sums to k
+    public static boolean findTarget(TreeNode root, int k) {
+        HashSet<Integer> set = new HashSet<>();
+        return helperTwoSum(root, k, set);
+
+    }
+
+    public static boolean helperTwoSum(TreeNode node, int k, HashSet<Integer> set) {
+        if (node == null) {
+            return false;
+        }
+
+        if (set.contains(k - node.val)) {
+            return true;
+        }
+
+        set.add(node.val);
+        return helperTwoSum(node.left, k, set) || helperTwoSum(node.right, k, set);
+    }
+
+    
 
 }
