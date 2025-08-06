@@ -156,4 +156,19 @@ public class LL {
 
     }
 
+    public ListNode removeElements(ListNode head, int val) {
+        if (head == null) {
+            return head;
+        }
+        return removeElements1(head, val);
+    }
+
+    public ListNode removeElements1(ListNode node, int val) {
+
+        if (node.val == val && node.next != null) {
+            node = node.next;
+        }
+        return removeElements1(node.next, val);
+    }
+
 }

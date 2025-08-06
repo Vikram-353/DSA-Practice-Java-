@@ -15,6 +15,8 @@ public class prac {
         int[] array = { 1, 1 };
         int[] array1 = { 0, 1, 2, 2, 3, 0, 4, 2, 2, 2, 2 };
         int[] array2 = {};
+        int[] arr1 = { 3, 4, 5, 1, 2 };
+        // int[] arr1 = { 2, 3, 1 };
 
         // rotateByK(arr, 2);
 
@@ -27,7 +29,8 @@ public class prac {
 
         // System.out.println(removeElement(array1, 2));
         // System.out.println(Arrays.toString(array1));
-        System.out.println(sumOfUnique(array2));
+        System.out.println(sumOfUnique(array1));
+        // System.out.println(findMin(arr1));
     }
 
     public static int[] PlusOne(int[] a) {
@@ -223,6 +226,7 @@ public class prac {
         for (int ele : nums) {
             map.put(ele, map.getOrDefault(ele, 0) + 1);
         }
+        System.out.println(map);
 
         Set<Integer> set = map.keySet();
 
@@ -233,5 +237,37 @@ public class prac {
             }
         }
         return sum;
+    }
+
+    public static int findMin(int[] nums) {
+        int l = 0;
+        int r = nums.length - 1;
+        while (l < r) {
+            int mid = l + (r - l) / 2;
+            if (mid == l && nums[l] > nums[r]) {
+                return nums[r];
+            }
+            if (nums[l] < nums[r]) {
+                return nums[l];
+            }
+
+            if (nums[l] > nums[r] && nums[r] < nums[mid] && nums[l] < nums[mid]) {
+                l = mid;
+            }
+
+            if (nums[l] > nums[mid] && nums[r] > nums[mid]) {
+
+                if (nums[mid - 1] < nums[mid]) {
+                    r = mid - 1;
+                }
+                if (nums[mid - 1] > nums[mid]) {
+                    l = mid;
+                }
+
+            }
+
+        }
+
+        return nums[0];
     }
 }
