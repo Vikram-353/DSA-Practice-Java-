@@ -1,7 +1,5 @@
 package questions.BinarySearch1d2d.KokoEatsBanana;
 
-import java.util.Arrays;
-
 public class Koko {
     public static void main(String[] args) {
         int[] piles = { 1000000000 };
