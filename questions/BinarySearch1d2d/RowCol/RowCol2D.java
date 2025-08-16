@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class RowCol2D {
     public static void main(String[] args) {
-        int[][] matrix = { { 1, 3 } };
-        int target = 0;
+        int[][] matrix = { { 1, 3 }, { 4, 6 }, { 9, 0 } };
+        int target = 9;
         // int[] result = search(matrix, target);
         // for (int i : result) {
         // System.out.println(i);
@@ -22,7 +22,8 @@ public class RowCol2D {
         int rows = matrix.length;
         int cols = matrix[0].length;
         int r = 0, c = cols - 1;
-
+        System.out.println(rows);
+        System.out.println(cols);
         while (r < rows && c >= 0) {
             int value = matrix[r][c];
             if (target == value) {
