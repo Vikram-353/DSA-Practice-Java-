@@ -1,10 +1,6 @@
 package sum;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class prac {
     public static void main(String[] args) {
@@ -18,19 +14,19 @@ public class prac {
         int[] arr1 = { 3, 4, 5, 1, 2 };
         // int[] arr1 = { 2, 3, 1 };
 
-        // rotateByK(arr, 2);
+        rotateByK(arr, 2);
 
-        // System.out.println(secondLargest(arr));
-        // System.out.println(isSorted(arr));
-        // System.out.println(Arrays.toString(b));
-        // System.out.println(Arrays.toString(searchRange(array, 1)));
-        // // System.out.println(searchRange(array, 8));
-        // System.out.println(Arrays.toString(array1));
+        System.out.println(secondLargest(arr));
+        System.out.println(isSorted(arr));
+        System.out.println(Arrays.toString(b));
+        System.out.println(Arrays.toString(searchRange(array, 1)));
+        // System.out.println(searchRange(array, 8));
+        System.out.println(Arrays.toString(array1));
 
-        // System.out.println(removeElement(array1, 2));
-        // System.out.println(Arrays.toString(array1));
-        System.out.println(sumOfUnique(array1));
-        // System.out.println(findMin(arr1));
+        System.out.println(removeElement(array1, 2));
+        System.out.println(Arrays.toString(array1));
+        System.out.println(sumOfUnique(array2));
+        System.out.println(findMin(arr1));
     }
 
     public static int[] PlusOne(int[] a) {
