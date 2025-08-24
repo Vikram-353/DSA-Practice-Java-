@@ -11,8 +11,9 @@ public class RemoveDuplicate {
         l.next.next.next.next = new ListNode(3);
         l.next.next.next.next.next = new ListNode(4);
         l.next.next.next.next.next.next = new ListNode(5);
-
-        printList(deleteDuplicates(l));
+        printList(l);
+        // printList(deleteDuplicates(l));
+        printList(reverse(l));
     }
 
     public static void printList(ListNode head) {
@@ -37,7 +38,7 @@ public class RemoveDuplicate {
         dummy.next = head;
         ListNode prev = dummy;
         ListNode current = head;
- 
+
         while (current != null) {
             boolean isDuplicate = false;
 
@@ -56,6 +57,27 @@ public class RemoveDuplicate {
         }
 
         return dummy.next;
+    }
+
+    public static ListNode reverse(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        ListNode prev = null;
+        ListNode present = head;
+        ListNode second = present.next;
+
+        while (second.next != null && second != null) {
+            present.next = prev;
+            prev = present;
+            present = second;
+            second = second.next;
+        }
+        present.next = prev;
+        second.next = present;
+
+        return second;
     }
 
 }

@@ -1,6 +1,5 @@
 package String.Zigzag;
 
-import java.util.Collections;
 
 public class ZigzagConversion {
     public static void main(String[] args) {
@@ -24,7 +23,7 @@ public class ZigzagConversion {
         for (char c : s.toCharArray()) {
             rows[curRow].append(c);
             if (curRow == 0 || curRow == numRows - 1) {
-                goingDown = !goingDown; // change direction
+                goingDown = !goingDown;
             }
             curRow += goingDown ? 1 : -1;
         }
