@@ -2,7 +2,6 @@ package BinaryTree;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import BinaryTree.TreeNode;
 
 // Utility class to build a tree from level-order input
 public class BuildTree {

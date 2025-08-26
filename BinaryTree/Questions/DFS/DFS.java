@@ -1,7 +1,5 @@
 package BinaryTree.Questions.DFS;
 
-import java.util.Arrays;
-
 public class DFS {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3,
