@@ -1,7 +1,6 @@
 package questions.Arrays.MaxAreaofLongDiagonal;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class MaxAreaofLongDiagonal {
     public static void main(String[] args) {
