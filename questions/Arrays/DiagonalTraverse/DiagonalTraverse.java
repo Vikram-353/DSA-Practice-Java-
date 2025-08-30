@@ -1,9 +1,6 @@
 package questions.Arrays.DiagonalTraverse;
 
 import java.util.*;
-
-import sum.reverseArr;
-
 public class DiagonalTraverse {
     public static void main(String[] args) {
         int[][] grid = { { 1, 7, 3 }, { 9, 8, 2 }, { 4, 5, 6 } };

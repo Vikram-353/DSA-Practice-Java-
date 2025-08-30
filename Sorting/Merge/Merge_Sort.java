@@ -4,7 +4,7 @@ package Sorting.Merge;
 //Space Complexity is O(n) b/c we using extra temp array space to stor array temprorarly
 public class Merge_Sort {
 
-    static void Sort_Increasing(int[] arr, int low, int high) {
+    public static void Sort_Increasing(int[] arr, int low, int high) {
         if (low >= high) {
             return;
         }
