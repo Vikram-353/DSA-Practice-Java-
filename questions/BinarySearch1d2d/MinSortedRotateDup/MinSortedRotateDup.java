@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MinSortedRotateDup {
     public static void main(String[] args) {
-        int[] nums = { 2, 2, 0, 0, 1, 1, 1 };
+        int[] nums = { -2, -1, 0, 1, 2 };
         System.out.println(findMin(nums));
         System.out.println(Arrays.toString(squareSort(nums)));
     }
@@ -28,31 +28,29 @@ public class MinSortedRotateDup {
     }
 
     public static int[] squareSort(int[] nums) {
-        // int[] numbers = new int[nums.length];
-        // int k = 0;
-        // int n = nums.length - 1;
-        // int i = n;
-        // while (k <= i) {
-        // if (Math.abs(nums[k]) > Math.abs(nums[i])) {
-        // numbers[n] = nums[k] * nums[k];
-        // k++;
-        // n--;
-        // } else {
-        // numbers[n] = nums[i] * nums[i];
-        // n--;
-        // i--;
-        // }
-
-        // }
-        // return numbers;
-
-        for (int i = 0; i < nums.length; i++) {
-            nums[i] = nums[i] * nums[i];
+        int n = nums.length - 1;
+        int[] sorted = new int[nums.length];
+        int l = 0;
+        int h = n;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (Math.abs(nums[l]) > Math.abs(nums[h])) {
+                sorted[i] = nums[l] * nums[l];
+                l++;
+            } else {
+                sorted[i] = nums[h] * nums[h];
+                h--;
+            }
         }
 
-        Arrays.sort(nums);
+        return sorted;
 
-        return nums;
+        // for (int i = 0; i < nums.length; i++) {
+        // nums[i] = nums[i] * nums[i];
+        // }
+
+        // Arrays.sort(nums);
+
+        // return nums;
 
     }
 
