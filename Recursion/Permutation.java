@@ -17,4 +17,5 @@ public class Permutation {
             subSec(f + ch + s, up.substring(1));
         }
     }
+
 }

@@ -1,7 +1,5 @@
 package OOPs.Singleton;
 
-import OOPs.*;
-
 public class Singleton {
     private Singleton() {
         System.out.println("Vikram");
