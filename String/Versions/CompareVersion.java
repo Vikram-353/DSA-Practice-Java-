@@ -12,19 +12,6 @@ public class CompareVersion {
     }
 
     public static int compareVersion(String version1, String version2) {
-        // String[] splitedversion1 = version1.split("\\.");
-        // String[] splitedversion2 = version2.split("\\.");
-        // ArrayList<String> str1 = new ArrayList<>();
-        // ArrayList<String> str2 = new ArrayList<>();
-
-        // for (String string : splitedversion1) {
-        // str1.add(string);
-        // }
-
-        // for (String string : splitedversion2) {
-        // str2.add(string);
-        // }
-
         ArrayList<String> str1 = new ArrayList<>(Arrays.asList(version1.split("\\.")));
         ArrayList<String> str2 = new ArrayList<>(Arrays.asList(version2.split("\\.")));
         if (str1.size() < str2.size()) {
