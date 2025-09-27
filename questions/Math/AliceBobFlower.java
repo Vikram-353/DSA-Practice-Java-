@@ -1,8 +1,5 @@
 package questions.Math;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class AliceBobFlower {
     public static void main(String[] args) {
         System.out.println(flowerGame(4, 4));
