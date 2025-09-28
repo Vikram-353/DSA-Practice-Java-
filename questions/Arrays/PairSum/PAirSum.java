@@ -1,10 +1,8 @@
 package questions.Arrays.PairSum;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Set;
 
 public class PAirSum {
     public static void main(String[] args) {
