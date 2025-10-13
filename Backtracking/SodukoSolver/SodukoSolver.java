@@ -1,7 +1,5 @@
 package Backtracking.SodukoSolver;
 
-import java.util.Arrays;
-
 public class SodukoSolver {
     public static void main(String[] args) {
         String[][] board = { { "5", "3", ".", ".", "7", ".", ".", ".", "." },
