@@ -1,3 +1,5 @@
+package questions.FloodLake;
+
 import java.util.*;
 
 public class FloodLake {

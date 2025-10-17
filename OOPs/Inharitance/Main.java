@@ -12,6 +12,12 @@ public class Main {
         fish.age = 2;
         fish.canSwim = true;
         System.out.println(fish.age + " " + fish.canSwim);
+        fish.haveGills = true;
+        fish.haveLungs = false;
+        fish.canSwim = true;
+        System.out.println(fish.haveGills);
+        System.out.println(fish.haveLungs);
+        System.out.println(fish.canSwim);
 
     }
 }
