@@ -1,6 +1,8 @@
 package questions.Arrays.Anagrams;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -32,38 +34,56 @@ public class Anagrams {
         if (word1.length() != word2.length()) {
             return false;
         }
-        HashMap<Character, Integer> map = new HashMap<>();
+        // HashMap<Character, Integer> map = new HashMap<>();
+
+        // for (int i = 0; i < word1.length(); i++) {
+        // map.put(word1.charAt(i), map.getOrDefault(word1.charAt(i), 0) + 1);
+        // }
+
+        // for (int i = 0; i < word2.length(); i++) {
+        // char ch = word2.charAt(i);
+        // if (!map.containsKey(ch)) {
+        // return false;
+        // }
+        // map.put(ch, map.get(ch) - 1);
+        // if (map.get(ch) < 0) {
+        // return false;
+        // }
+        // }
+        // for (int val : map.values()) {
+        // if (val != 0) {
+        // return false;
+        // }
+        // }
+        // return true;
+
+        // char[] s1 = word1.toCharArray();
+        // char[] s2 = word2.toCharArray();
+
+        // Arrays.sort(s2);
+        // Arrays.sort(s1);
+
+        // for (int i = 0; i < s2.length; i++) {
+        // if (s1[i] != s2[i]) {
+        // return false;
+        // }
+        // }
+
+        // return true;
+
+        int[] arr = new int[26];
 
         for (int i = 0; i < word1.length(); i++) {
-            map.put(word1.charAt(i), map.getOrDefault(word1.charAt(i), 0) + 1);
+            arr[word1.charAt(i) - 'a']++;
+            arr[word2.charAt(i) - 'a']--;
         }
 
-        for (int i = 0; i < word2.length(); i++) {
-            // if (map.containsKey(word2.charAt(i))) {
-            // if (map.get(word2.charAt(i)) > 0) {
-            // map.put(word2.charAt(i), map.get(word2.charAt(i)) - 1);
-            // } else {
-            // return false;
-            // }
+        for (int i : arr) {
+            if (i != 0) {
+                return false;
+            }
+        }
 
-            // } else {
-            // return false;
-            // }
-            char ch = word2.charAt(i);
-            if (!map.containsKey(ch)) {
-                return false;
-            }
-            map.put(ch, map.get(ch) - 1);
-            if (map.get(ch) < 0) {
-                return false;
-            }
-        }
-        for (int val : map.values()) {
-            if (val != 0) {
-                return false;
-            }
-        }
         return true;
-
     }
 }
