@@ -1,11 +1,6 @@
 package BinaryTree.Questions.BFS;
 
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class BFS {
     public static void main(String[] args) {
@@ -25,7 +20,7 @@ public class BFS {
         boolean result3 = bfs.isSymmetric(root);
         System.out.println(result2);
         System.out.println(result3);
-        boolean result4 = findTarget(root, 100);
+        boolean result4 = findTarget(root, 14);
         System.out.println(result4);
 
     }
