@@ -9,9 +9,9 @@ public class Recursion {
         Star(r, c);
         Star2(6, 0);
         int[] a = { 2, 1, 3, 5, 4, 6, 7, 0, 8 };
-        // BubbleSort(a, a.length - 1, c);
-        // System.out.println();
-        // System.out.println(Arrays.toString(a));
+        BubbleSort(a, a.length - 1, c);
+        System.out.println();
+        System.out.println(Arrays.toString(a));
         SelectionSort(a, a.length - 1, c);
         System.out.println();
         System.out.println(Arrays.toString(a));
