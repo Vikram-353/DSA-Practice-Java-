@@ -1,11 +1,10 @@
 package String.MinDeletionSize;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MinDeletionSize {
     public static void main(String[] args) {
-        String[] str = { "abc", "bce", "cae" };
+        String[] str = { "xc", "yb", "za" };
         System.out.println(minDeletionSize(str));
     }
 
@@ -21,7 +20,11 @@ public class MinDeletionSize {
         }
 
         for (char[] cs : chList) {
-            if (!isSorted(cs)) {
+            if (isSortedIn(cs)) {
+                continue;
+            } else if (!isSortedDe(cs)) {
+                continue;
+            } else {
                 count++;
             }
         }
@@ -29,9 +32,18 @@ public class MinDeletionSize {
         return count;
     }
 
-    static boolean isSorted(char[] ch) {
+    static boolean isSortedIn(char[] ch) {
         for (int i = 0; i < ch.length - 1; i++) {
             if (ch[i] > ch[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static boolean isSortedDe(char[] ch) {
+        for (int i = 0; i < ch.length - 1; i++) {
+            if (ch[i] < ch[i + 1]) {
                 return false;
             }
         }
